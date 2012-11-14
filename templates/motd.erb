@@ -1,10 +1,13 @@
 
 <%= operatingsystem %> <%= operatingsystemrelease %> <%= architecture %>
 
-FQDN:      <%= fqdn %> (<%= ipaddress %>)
+FQDN     : <%= fqdn %> (<%= ipaddress %>)
 <% if has_variable?("processor0") then -%>
 Processor: <%= processorcount %>x <%= processor0 %>
 <% end -%>
-Kernel:    <%= kernelrelease %>
-Memory:    <%= memorysize %>
+Kernel   : <%= kernelrelease %>
+Memory   : <%= memorysize %>
+<% if is_virtual==true then -%>
+ATTENTION: <%= virtual%> virtual server.
+<% end -%>
 
